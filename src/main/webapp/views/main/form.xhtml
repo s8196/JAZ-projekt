@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+    <h:form id="form">
+        <h:panelGrid columns="3">
+
+            <h:outputText value="#{msg.name}" />
+            <h:inputText id="name" value="#{shipJsf.ship.name}" size="50">
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="name" style="color:red" />
+            
+            <h:outputText value="#{msg.speed}" />
+            <h:inputText id="speed" value="#{shipJsf.ship.speed}" size="8" >
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="speed" style="color:red" />
+            
+            <h:outputText value="#{msg.weight}" />
+            <h:inputText id="weight" value="#{shipJsf.ship.displacement}" size="8" >
+                <f:validateRequired />
+            </h:inputText>
+            <h:messages for="weight" style="color:red" />
+        </h:panelGrid>
+        <p>
+            <h:commandButton value="#{msg.merge}" action="#{shipJsf.merge}" />
+        </p>
+    </h:form>
+</ui:composition>
